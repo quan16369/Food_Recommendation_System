@@ -5,7 +5,8 @@ const readline = require("readline");
 const { ChromaClient } = require("chromadb");
 const foodItems = require("./FoodDataSet.js");
 
-const hf = new HfInference("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");
+const hf = new HfInference(process.env.HF_API_KEY);
+require('dotenv').config();
 const chroma = new ChromaClient();
 const collectionName = "recipe_food";
 
