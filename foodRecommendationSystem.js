@@ -1,7 +1,8 @@
 const { ChromaClient } = require("chromadb");
 const client = new ChromaClient();
 const { HfInference } = require("@huggingface/inference");
-const hf = new HfInference("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");
+const hf = new HfInference(process.env.HF_API_KEY);
+require('dotenv').config();
 const foodItems = require("./FoodDataSet.js");
 const collectionName = "food_collection";
 
